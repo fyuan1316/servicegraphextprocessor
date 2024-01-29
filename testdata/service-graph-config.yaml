@@ -1,0 +1,26 @@
+receivers:
+  nop:
+
+exporters:
+  nop:
+
+processors:
+  asmservicegraph:
+    metrics_exporter: metrics
+    latency_histogram_buckets: [1,2,3,4,5]
+    dimensions:
+      - dimension-1
+      - dimension-2
+    extra_dimensions:
+      mesh_id: dev
+      cluster_name: dev
+    store:
+      ttl: 1s
+      max_items: 10
+
+service:
+  pipelines:
+    traces:
+      receivers: [nop]
+      processors: [asmservicegraph]
+      exporters: [nop]
