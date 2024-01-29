@@ -18,7 +18,6 @@ import (
 	"context"
 	"time"
 
-	"go.opencensus.io/stats/view"
 	"go.opentelemetry.io/collector/component"
 	"go.opentelemetry.io/collector/consumer"
 	"go.opentelemetry.io/collector/processor"
@@ -34,7 +33,7 @@ const (
 // NewFactory creates a factory for the servicegraph processor.
 func NewFactory() processor.Factory {
 	// TODO: Handle this err
-	_ = view.Register(serviceGraphProcessorViews()...)
+	// _ = view.Register(serviceGraphProcessorViews()...)
 
 	return processor.NewFactory(
 		typeStr,
