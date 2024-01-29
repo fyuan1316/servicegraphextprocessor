@@ -1,0 +1,27 @@
+dist:
+  name: otelcol
+  description: Custom OTel Collector distribution
+  output_path: ./otelcol-dev
+  otelcol_version: 0.93.0
+
+receivers:
+  - gomod: go.opentelemetry.io/collector/receiver/otlpreceiver v0.93.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zipkinreceiver v0.93.0
+
+processors:
+  - gomod: go.opentelemetry.io/collector/processor/batchprocessor v0.93.0
+  - gomod: go.opentelemetry.io/collector/processor/memorylimiterprocessor v0.93.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/processor/filterprocessor v0.93.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor v0.93.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/processor/metricstransformprocessor v0.93.0
+  - gomod: github.com/fyuan1316/servicegraphextprocessor v0.0.0-20240129100809-992de8e325f0
+
+exporters:
+  - gomod: go.opentelemetry.io/collector/exporter/otlpexporter v0.93.0
+  - gomod: go.opentelemetry.io/collector/exporter/loggingexporter v0.93.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusexporter v0.93.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/loadbalancingexporter v0.93.0
+
+extensions:
+  - gomod: go.opentelemetry.io/collector/extension/ballastextension v0.93.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/extension/healthcheckextension v0.93.0
