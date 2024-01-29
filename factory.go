@@ -34,7 +34,7 @@ const (
 // NewFactory creates a factory for the servicegraph processor.
 func NewFactory() processor.Factory {
 	// TODO: Handle this err
-	_ = view.Register(serviceGraphProcessorViews()...)
+	// _ = view.Register(serviceGraphProcessorViews()...)
 
 	return processor.NewFactory(
 		typeStr,

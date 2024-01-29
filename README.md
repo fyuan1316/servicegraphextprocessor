@@ -1,4 +1,4 @@
-# Service graph processor
+# Service graph processor (Test workflow by building plugins)
 
 | Status                   |           |
 | ------------------------ |-----------|
